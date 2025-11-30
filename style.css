@@ -1,0 +1,132 @@
+
+
+/* nav-items */
+
+nav div{
+  height: 60px;
+}
+nav a.md-nav-item {
+  position:relative;
+  text-decoration: none;
+  padding: 8px 12px;
+}
+
+nav a.md-nav-item::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: rgb(82, 188, 59);
+  transition: width 0.3s ease-in-out;
+}
+
+nav a.md-nav-item:hover::after {
+  width: 100%;
+}
+
+/* Active directory */
+.active-m{
+  color: white;
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(220, 100, 100, 0.06) 0px 2px 4px -1px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700; /* medium */
+  border-radius: 5px;
+  
+}
+
+
+.box-shadow:hover{
+    border:border-box 2px rgb(82, 188, 59);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    /* background-color: #5de969; */
+    
+}
+
+.hash{
+  color: rgb(82, 188, 59);
+}
+
+.GitHub {
+  display: inline-block;
+  padding: 8px 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #dee4e2; 
+  border: 2px solid rgb(217, 186, 186);
+  border-radius: 8px;
+  transition: all 0.25s ease;
+}
+
+.GitHub:hover {
+  background-color: rgba(0, 255, 136, 0.15); /* faint green glow */
+  border-color:  #00ff88; 
+  box-shadow: 0 0 10px #00ff8866; 
+  color: #00ff88;
+  transform: translateY(-2px);
+
+}
+
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeUp {
+  animation: fadeUp 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+
+
+
+/* Skills container */
+.skills-slider {
+  width: 100%;
+  white-space: nowrap;
+}
+
+/* Track animation */
+.skills-track {
+  display: inline-flex;
+  gap: 30px;
+  animation: scrollSkills 15s linear infinite;
+}
+
+/* Skill box style */
+.skill {
+  padding: 8px 20px;
+  border: 1px solid #a855f7; /* purple */
+  color: #a855f7;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  background: rgba(168, 85, 247, 0.1);
+  transition: 0.25s ease;
+}
+
+/* Hover effect */
+.skill:hover {
+  background: rgba(168, 85, 247, 0.25);
+  transform: translateY(-0px);
+  box-shadow: 0 0 10px #a855f777;
+}
+
+/* Keyframes for infinite scroll */
+@keyframes scrollSkills {
+  0% {
+    transform: translateX(2%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

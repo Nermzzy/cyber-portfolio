@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en" x-data="carousel()" x-init="init()" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js" defer></script>
+
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="animation.css" />
+  <!-- <link rel="stylesheet" href="responsive.css" /> -->
+</head>
+
+<body class="bg-gray-900 text-gray-200 overflow-x-hidden font-display font-family: var(--font-mono)">
+
+
+  <!-- Navbar -->
+  <nav class="relative shadow-md w-full z-50" x-data="{ open: false }">
+    <div class="container mx-auto px-4 py- flex justify-between items-center">
+      <a href="home.html" class="flex items-center">
+        <span class="text-3xl font-bold">Nermzzy</span>
+      </a>
+
+
+      <!-- Hamburger Icon -->
+      <button class="md:hidden flex flex-col justify-center items-center w-10 h-10" @click="open = !open"
+        aria-label="Toggle menu">
+        <span class="block w-7 h-1 bg-gray-200 mb-1 rounded transition-all duration-300"
+          :class="{'rotate-45 translate-y-2': open}"></span>
+        <span class="block w-7 h-1 bg-gray-200 mb-1 rounded transition-all duration-300"
+          :class="{'opacity-0': open}"></span>
+        <span class="block w-7 h-1 bg-gray-200 rounded transition-all duration-300"
+          :class="{'-rotate-45 -translate-y-2': open}"></span>
+      </button>
+
+      <!-- Desktop Menu -->
+      <ul class="hidden md:flex space-x-6 flex font-medium items-center w-full h-full justify-end">
+        <li><a href="#about.html" class="transition duration-300 md-nav-item py-6 px-3"><span
+              class="hash">#</span>About</a></li>
+        <li><a href="#project" class="transition duration-200 md-nav-item py-6 px-3"><span
+              class="hash">#</span>projects</a></li>
+        <li><a href="#contact.html" class="transition duration-200 md-nav-item py-6 px-3"><span
+              class="hash">#</span>Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="absolute md:hidden top-full left-0 right-0" x-show="open"
+      x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 -translate-y-4"
+      x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-300"
+      x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 -translate-y-4"
+      @click.away="open = false">
+      <ul class="px-4 pb-6 py-4 space-y-2 shadow-md font-medium w-full z-50 bg-gray-900">
+        <li>
+          <a href="#about" class="block w-full px-4 py-2 md-nav-item transition-all duration-300 rounded">
+            <span class="hash">#</span>About </a>
+        </li>
+        <li>
+          <a href="#project" class="block w-full px-4 py-2 md-nav-item transition-all duration-300 rounded"> <span
+              class="hash">#</span>Projects </a>
+        </li>
+        <li>
+          <a href="#contact" class="block w-full px-4 py-2 md-nav-item transition-all duration-300 rounded"> <span
+              class="hash">#</span>Contact </a>
+        </li>
+      </ul>
+    </div>
+
+  </nav>
+
+
+
+
+  <section id="about"
+    class="my-8 p-4 flex items-center justify-center relative overflow-hidden md:p-8 relative overflow-hidden fade-up">
+    <div class="max-w-[1000px] m-9 grid grid-cols-1 gap-y-4 gap-x-10 md:grid-cols-[3fr_2fr]">
+      <h2 class="font-[600] text-[32px] text-tertiary flex items-center undefined"><span
+          class="hash">#</span>about-me<span class="ml-2 max-w-[500px] grow h-[2px] hash"></span></h2>
+      <div class="hidden md:block"></div>
+      <div class="m-auto flex flex-col gap-8">
+        <p class="text-primary undefined">Hello, I'm Nermzzy!</p>
+        <p class="text-primary undefined">I'm an asparing pentester located in Abuja, Nigeria. I have a great passion
+          for Ethical Hacking.</p>
+        <p class="text-primary undefined">With hands-on experience in Python, networking, Linux and a background in
+          frontend development. I’ve passed the ISC2 CC
+          exam.
+
+        </p><a
+          class="w-fit p-1 px-4 border text-tertiary text-center font-medium hover:opacity-75 border-purple hover:bg-purple/20 flex items-center gap-4"
+          href="https://docs.google.com/document/d/1rW4m8dXa0b8q-G2cI1Xs3dxwSbxFj2TgUODTxqaP8ak/edit?usp=drivesdk">My CV
+        </a>
+      </div>
+      <div class="mt-4 mx-auto w-fit h-fit md:h-full md:mt-0">
+        <div class="relative grow flex flex-col h-auto min-h-[200px] w-fit min-w-[250px] mx-auto"><img alt="About Me"
+            loading="lazy" decoding="async" data-nimg="fill" class="z-10 "
+            style="position: absolute; height: 100%; width: 100%; inset: 0px; object-fit: contain;"
+            src="images/profile1.png">
+        </div>
+        <div class="w-fit mx-auto border border-tertiary p-2 flex items-center gap-2"><span
+            class="w-4 h-4 bg-green-500"></span>
+          <p class="text-primary undefined">Currently learning</p>
+          <span class="text-tertiary undefined"><a class="hover:underline font-bold" href="">CyberOps</a></span>
+        </div>
+      </div>
+
+  </section>
+
+
+
+
+  <section class="my-8 px-4 md:px-8 flex justify-center fade-up" id="project">
+    <div class="w-full max-w-[1000px] m-9 ">
+
+      <!-- Section Title -->
+      <h2 class="font-semibold text-2xl mb-8 flex items-center animate-fadeUp">
+        <span class="hash">#</span>projects
+        <span class="ml-3 h-[2px] bg-purple w-full"></span>
+      </h2>
+
+      <!-- Projects Grid -->
+      <div class="grid grid-cols-2:grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Project Card 1 -->
+        <div class="project-card animate-fadeUp delay-[0.1s] border p-4 rounded-xl bg-black/20 
+                  hover:shadow-purple/30 hover:scale-[1.02] transition-all duration-300 
+                  shadow-lg flex flex-col">
+          <img src="images/portscanner.png" class="rounded-md mb-4 h-40 w-full object-cover" alt="">
+          <h3 class="text-xl font-semibold mb-2 text-primary">Port Scanner</h3>
+          <p class="text-tertiary text-sm mb-4">
+            A fast Python-based port scanner using sockets and threading.
+          </p>
+
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="tag">Python</span>
+            <span class="tag">Networking</span>
+          </div>
+
+          <div class="flex mt-auto justify-center GitHub">
+            <a class="btn-green-500" href="https://github.com/Nermzzy/port-scanner.git">GitHub</a>
+          </div>
+        </div>
+
+        <!-- Project Card 2 -->
+        <div class="project-card animate-fadeUp delay-[0.25s] border p-4 rounded-xl bg-black/20 
+                  hover:shadow-purple/30 hover:scale-[1.02] transition-all duration-300 
+                  shadow-lg flex flex-col">
+          <img src="images/folder_organizer.png" class="rounded-md mb-4 h-40 w-full object-cover" alt="">
+          <h3 class="text-xl font-semibold mb-2 text-primary">File Organizer</h3>
+          <p class="text-tertiary text-sm mb-4">
+            Automatically sorts files by type into structured folders.
+          </p>
+
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="tag">Python</span>
+            <span class="tag">Automation</span>
+          </div>
+
+          <div class="flex mt-auto justify-center GitHub">
+            <a class="btn-purple" href="https://github.com/Nermzzy/file-cleaner.git">GitHub</a>
+          </div>
+        </div>
+
+        <!-- Project Card 3 -->
+        <div class="project-card animate-fadeUp delay-[0.4s] border p-4 rounded-xl bg-black/20 
+                  hover:shadow-purple/30 hover:scale-[1.02] transition-all duration-300 
+                  shadow-lg flex flex-col">
+          <img src="images/envelop.png" class="rounded-md mb-4 h-40 w-full object-cover" alt="">
+          <h3 class="text-xl font-semibold mb-2 text-primary">Ransomware</h3>
+          <p class="text-tertiary text-sm mb-4">
+            A custom file Encryptor..... Envelop encryption.
+          </p>
+
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="tag">Python</span>
+            <span class="tag">Cybersecurity</span>
+          </div>
+
+          <div class="flex justify-center mt-auto GitHub">
+            <a class="btn-purple" href="https://github.com/Nermzzy/Envelope-Encryptor.git">GitHub</a>
+          </div>
+        </div>
+
+
+        <!-- Project Card 4 -->
+        <div class="project-card animate-fadeUp delay-[0.4s] border p-4 rounded-xl bg-black/20 
+                  hover:shadow-purple/30 hover:scale-[1.02] transition-all duration-300 
+                  shadow-lg flex flex-col">
+          <img src="images/envelop.png" class="rounded-md mb-4 h-40 w-full object-cover" alt="">
+          <h3 class="text-xl font-semibold mb-2 text-primary">SQL Scanner</h3>
+          <p class="text-tertiary text-sm mb-4">
+            A tool that check SQL injection posibility
+          </p>
+
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="tag">Python</span>
+            <span class="tag">Cybersecurity</span>
+          </div>
+
+          <div class="flex mt-auto justify-center GitHub">
+            <a class="btn-purple" href="https://github.com/Nermzzy/SQL-injection-scanner.git">GitHub</a>
+          </div>
+        </div>
+
+
+
+
+        <!-- Project Card 5 -->
+        <div class="project-card animate-fadeUp delay-[0.4s] border p-4 rounded-xl bg-black/20 
+                  hover:shadow-purple/30 hover:scale-[1.02] transition-all duration-300 
+                  shadow-lg flex flex-col">
+          <img src="images/envelop.png" class="rounded-md mb-4 h-40 w-full object-cover" alt="">
+          <h3 class="text-xl font-semibold mb-2 text-primary">Cli chat</h3>
+          <p class="text-tertiary text-sm mb-4">
+            This just a local chat room taht uses TCP between
+          </p>
+
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="tag">Python</span>
+            <span class="tag">Networking</span>
+          </div>
+
+          <div class="flex justify-center mt-auto GitHub">
+            <a class="btn-purple" href="https://github.com/Nermzzy/chat-room.git">GitHub</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="my-8 p-4 flex items-center justify-center relative overflow-hidden md:p-8 relative fade-up"
+    id="skills">
+    <div class="w-full max-w-[1200px]">
+
+      <!-- Section Title -->
+      <h2 class="font-semibold text-2xl mb-8 flex items-center animate-fadeUp m-20 p-7 "><span
+          class="hash">#</span>skills</h2>
+
+      <!-- Scrolling Skills Wrapper -->
+      <div class="skills-slider overflow-hidden relative">
+        <div class="skills-track">
+
+          <!-- Skill Items -->
+          <span class="skill">Python</span>
+          <span class="skill">Linux</span>
+          <span class="skill">Networking</span>
+          <span class="skill">Wireshark</span>
+          <span class="skill">Nmap</span>
+          <span class="skill">Bash</span>
+          <span class="skill">HTML/CSS</span>
+          <span class="skill">TailwindCSS</span>
+          <span class="skill">JavaScript</span>
+
+          <!-- Duplicate for seamless infinite loop -->
+          <span class="skill">Python</span>
+          <span class="skill">Linux</span>
+          <span class="skill">Networking</span>
+          <span class="skill">Wireshark</span>
+          <span class="skill">Nmap</span>
+          <span class="skill">Bash</span>
+          <span class="skill">HTML/CSS</span>
+          <span class="skill">TailwindCSS</span>
+          <span class="skill">JavaScript</span>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+
+
+
+  <section id="contact"
+    class="my-8 p-4 flex items-center justify-center relative overflow-hidden md:p-8 relative fade-up">
+    <div class="w-full max-w-[1000px] m-9">
+
+      <!-- Title -->
+      <h2 class="font-semibold text-2xl mb-8 flex items-center animate-fadeUp"><span class="hash">#</span>contact-me
+      </h2>
+      <p class=" mx-auto ">
+        Have a project for me? Want to collaborate? Or just say hi.
+        My inbox is always open.
+      </p>
+      <!-- Social Icons -->
+      <div class="m-9">
+        <div class="m-3">
+          <a href="https://github.com/Nermzzy" class="text-gray-400 hover:text-[#14B8A6] transition text-2xl">
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <span> Nermzzy </span>
+        </div>
+
+        <div class="m-3">
+          <a href="https://www.linkedin.com/in/chukwuemeka-ikechukwu-134278391/"
+            class="text-gray-400 hover:text-[#14B8A6] transition text-2xl">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+          <span> Chukwuemeka Ikechukwu </span>
+        </div>
+
+
+        <div class="m-3 ">
+          <a href="https://x.com/real_durov?t=Vnch1rn5LnkGh-81fDLQbg&s=09"
+            class="text-gray-400 hover:text-[#14B8A6] transition text-2xl">
+            <i class="fa-brands fa-twitter"></i> </a>
+          <span> real_durov </span>
+        </div>
+
+        <div class="m-3">
+          <a href="https://www.facebook.com/nermzzy.nazario"
+            class="text-gray-400 hover:text-[#14B8A6] transition text-2xl">
+            <i class="fa-brands fa-facebook"></i>
+          </a>
+          <span> Nermzzy Nazario </span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <script src="animation.js"></script>
+
+
+</body>
+
+</html>
